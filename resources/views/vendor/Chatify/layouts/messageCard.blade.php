@@ -15,9 +15,6 @@
     @if(@$attachment[2] == 'image')
     <div>
         <div class="message-card">
-            <div class="avatar av-m"
-            style="background-image: url('{{ $user->avatar }}');">
-            </div>
             <div class="image-file chat-image" style="width: 250px; height: 150px;background-image: url('{{ $attachment[0] }}')">
             </div>
         </div>
