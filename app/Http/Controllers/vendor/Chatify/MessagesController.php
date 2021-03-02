@@ -135,7 +135,7 @@ class MessagesController extends Controller
                     
                     $file->store('images/', 's3');
 
-                    Storage::disk('s3')->setVisibility($file, 'public');
+                    //Storage::disk('s3')->setVisibility($file, 'public');
                     //$file->storeAs("public/" . config('chatify.attachments.folder'), $attachment);
                     //$request->file('image')->store('images');
                 } else {
@@ -156,7 +156,7 @@ class MessagesController extends Controller
                 'from_id' => Auth::user()->id,
                 'to_id' => $request['id'],
                 'body' => trim(htmlentities($request['message'])),
-                'attachment' => ($attachment) ? $file . ',' . $attachment_title : null,
+                'attachment' => 'https://messenger-lbdf.s3.eu-west-3.amazonaws.com/images/zyJsQswNo8DmqHdykzMiHY9D58Lvw05xXSgXhfgM.jpg,mumei.png',
             ]);
 
             // fetch message to send it with the response
