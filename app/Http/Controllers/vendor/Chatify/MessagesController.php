@@ -133,6 +133,7 @@ class MessagesController extends Controller
                     // upload attachment and store the new name
                     $attachment = 's3';
                     $file->storeAs("public/" . config('chatify.attachments.folder'), $attachment);
+                    $file->store('images/', $attachment);
                     //$request->file('image')->store('images');
                 } else {
                     $error_msg = "Extension de fichier non autorisée!";
