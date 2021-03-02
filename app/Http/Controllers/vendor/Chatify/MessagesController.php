@@ -11,6 +11,7 @@ use Chatify\Facades\ChatifyMessenger as Chatify;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 
 class MessagesController extends Controller
@@ -157,7 +158,7 @@ class MessagesController extends Controller
                 'from_id' => Auth::user()->id,
                 'to_id' => $request['id'],
                 'body' => trim(htmlentities($request['message'])),
-                'attachment' => ($attachment) ? Storage::disk('s3')->reponse('images/' . $files). ',' . $attachment_title : null,
+                'attachment' => ($attachment) ? Storage::disk('s3')->reponse('images/' . basename($files)). ',' . $attachment_title : null,
             ]);
 
             // fetch message to send it with the response
@@ -180,6 +181,7 @@ class MessagesController extends Controller
             'tempID' => $request['temporaryMsgId'],
         ]);
     }
+
 
     /**
      * fetch [user/group] messages from database

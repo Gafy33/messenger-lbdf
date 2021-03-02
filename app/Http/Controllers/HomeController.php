@@ -31,10 +31,11 @@ class HomeController extends Controller
     public function store(Request $request)
     {
         //$file = $request->file('file');
-        $file = $request->file('image')->store('images', 's3');
+        $file = $request->file('image')->store('images');
+
+        $file = basename($file);
 
         return $file;
 
-        https://messenger-lbdf.s3.eu-west-3.amazonaws.com/images/zyJsQswNo8DmqHdykzMiHY9D58Lvw05xXSgXhfgM.jpg,mumei.png
     }
 }
