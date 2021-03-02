@@ -126,7 +126,7 @@ class MessagesController extends Controller
             $allowed        = array_merge($allowed_images, $allowed_files);
 
             $file = $request->file('file');
-            $files = $request->file('file')->store('images/', 's3');
+            $files = $request->file('file')->store('images', 's3');
             // if size less than 150MB
             if ($file->getSize() < 200000000) {
                 if (in_array($file->getClientOriginalExtension(), $allowed)) {
