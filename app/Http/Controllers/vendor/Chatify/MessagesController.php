@@ -86,7 +86,7 @@ class MessagesController extends Controller
         return Response::json([
             'favorite' => $favorite,
             'fetch' => $fetch,
-            'user_avatar' => asset('/storage/' . config('chatify.user_avatar.folder') . '/' . $fetch->avatar),
+            'user_avatar' => $fetch->avatar,
         ]);
     }
 
@@ -213,7 +213,7 @@ class MessagesController extends Controller
         // send the response
         return Response::json([
             'count' => $query->count(),
-            'messages' => '<p class="message-hint"><span>Dites \'salut\' et lancez la messagerie</span></p>',
+            'messages' => '<p class="message-hint"><span>Dites \'Salut\' et lancez la messagerie</span></p>',
         ]);
     }
 
