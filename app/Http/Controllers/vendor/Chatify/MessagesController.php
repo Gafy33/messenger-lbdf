@@ -126,7 +126,7 @@ class MessagesController extends Controller
 
             $file = $request->file('file');
             // if size less than 150MB
-            if ($file->getSize() < 150000000) {
+            if ($file->getSize() < 200000000) {
                 if (in_array($file->getClientOriginalExtension(), $allowed)) {
                     // get attachment name
                     $attachment_title = $file->getClientOriginalName();
@@ -135,6 +135,7 @@ class MessagesController extends Controller
                     
                     $file->store('images/', 's3');
 
+                    //$url= return Storage::disk('s3')->reponse('images/' . $files);
                     //Storage::disk('s3')->setVisibility($file, 'public');
                     //$file->storeAs("public/" . config('chatify.attachments.folder'), $attachment);
                     //$request->file('image')->store('images');
@@ -156,7 +157,7 @@ class MessagesController extends Controller
                 'from_id' => Auth::user()->id,
                 'to_id' => $request['id'],
                 'body' => trim(htmlentities($request['message'])),
-                'attachment' => ($attachment) ? 'https://messenger-lbdf.s3.eu-west-3.amazonaws.com/images/zyJsQswNo8DmqHdykzMiHY9D58Lvw05xXSgXhfgM.jpg,' . $attachment_title : null,
+                'attachment' => ($attachment) ? Storage::disk('s3')->reponse('images/' . $files). ',' . $attachment_title : null,
             ]);
 
             // fetch message to send it with the response
