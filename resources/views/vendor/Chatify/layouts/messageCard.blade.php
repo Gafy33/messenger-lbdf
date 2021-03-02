@@ -15,7 +15,7 @@
     @if(@$attachment[2] == 'image')
     <div>
         <div class="message-card">
-            <div class="image-file chat-image" style="width: 250px; height: 150px;background-image: url('{{ asset('{{ $attachment[0]) }}')">
+            <div class="image-file chat-image" style="width: 250px; height: 150px;background-image: url('https://messenger-lbdf.s3.eu-west-3.amazonaws.com/images/Un4wGinM9uadFJgFF5pxG6Lq1hisbAIOjLqm6dn6.jpg')">
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
     @if(@$attachment[2] == 'image')
     <div>
         <div class="message-card mc-sender">
-            <div class="image-file chat-image" style="width: 250px; height: 150px;background-image: url('{{ $attachment[0]) }}')">
+            <div class="image-file chat-image" style="width: 250px; height: 150px;background-image: url('https://messenger-lbdf.s3.eu-west-3.amazonaws.com/images/Un4wGinM9uadFJgFF5pxG6Lq1hisbAIOjLqm6dn6.jpg')">
             </div>
         </div>
     </div>
