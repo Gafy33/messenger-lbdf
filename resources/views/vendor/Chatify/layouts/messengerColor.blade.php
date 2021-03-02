@@ -79,6 +79,11 @@
     background: {{ $messengerColor }};
 }
 
+.a-btn-success:hover
+{
+    background: {{ $messengerColor }};
+}
+
 .m-list-active .activeStatus{
     border-color: {{ $messengerColor }} !important;
 }
