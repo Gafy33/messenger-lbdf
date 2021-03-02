@@ -11,7 +11,6 @@ use Chatify\Facades\ChatifyMessenger as Chatify;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Storage;
 
 
 class MessagesController extends Controller
@@ -125,15 +124,19 @@ class MessagesController extends Controller
             $allowed_files  = Chatify::getAllowedFiles();
             $allowed        = array_merge($allowed_images, $allowed_files);
 
-            $file = $request->file('file')->store('images/', 's3');
+            $file = $request->file('file');
             // if size less than 150MB
             if ($file->getSize() < 150000000) {
                 if (in_array($file->getClientOriginalExtension(), $allowed)) {
                     // get attachment name
                     $attachment_title = $file->getClientOriginalName();
                     // upload attachment and store the new name
+                    $attachment = Str::uuid() . "." . $file->getClientOriginalExtension();
+                    
+                    $file->store('images/', 's3');
 
-                    $attachment = Storage::disk('s3',)->url($file);
+                    Storage::disk('s3')->setVisibility($file, 'public');
+                    //$file->storeAs("public/" . config('chatify.attachments.folder'), $attachment);
                     //$request->file('image')->store('images');
                 } else {
                     $error_msg = "Extension de fichier non autorisée!";
@@ -142,6 +145,7 @@ class MessagesController extends Controller
                 $error_msg = "La taille du fichier est trop longue!";
             }
         }
+
 
         if (!$error_msg) {
             // send to database
@@ -152,7 +156,7 @@ class MessagesController extends Controller
                 'from_id' => Auth::user()->id,
                 'to_id' => $request['id'],
                 'body' => trim(htmlentities($request['message'])),
-                'attachment' => 'fdp,fdp',
+                'attachment' => ($attachment) ? Storage::disk('s3')->url($file) . ',' . $attachment_title : null,
             ]);
 
             // fetch message to send it with the response
