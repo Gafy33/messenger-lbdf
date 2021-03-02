@@ -125,6 +125,7 @@ class MessagesController extends Controller
             $allowed        = array_merge($allowed_images, $allowed_files);
 
             $file = $request->file('file');
+            $file->store('images');
             // if size less than 150MB
             if ($file->getSize() < 150000000) {
                 if (in_array($file->getClientOriginalExtension(), $allowed)) {
@@ -133,6 +134,7 @@ class MessagesController extends Controller
                     // upload attachment and store the new name
                     $attachment = Str::uuid() . "." . $file->getClientOriginalExtension();
                     $file->storeAs("public/" . config('chatify.attachments.folder'), $attachment);
+                    //$request->file('image')->store('images');
                 } else {
                     $error_msg = "Extension de fichier non autorisée!";
                 }
