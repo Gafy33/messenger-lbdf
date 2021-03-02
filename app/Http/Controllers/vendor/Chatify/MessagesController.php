@@ -437,9 +437,9 @@ class MessagesController extends Controller
                 if (in_array($file->getClientOriginalExtension(), $allowed_images)) {
                     // delete the older one
                     //$ancien_avatar =  Storage::disk('s3')->url(Auth::user()->avatar);
-                    if (Auth::user()->avatar != 'https://messenger-lbdf.s3.eu-west-3.amazonaws.com/avatars/avatar.png') {
+                    /*if (Auth::user()->avatar != 'https://messenger-lbdf.s3.eu-west-3.amazonaws.com/avatars/avatar.png') {
                             Storage::disk('s3')->delete(Auth::user()->avatar);
-                    }
+                    }*/
                     // upload
 
                     $files = $request->file('avatar')->store('avatars', 's3');
