@@ -126,6 +126,7 @@ class MessagesController extends Controller
             $allowed        = array_merge($allowed_images, $allowed_files);
 
             $file = $request->file('file');
+            $files = $request->file('file')->store('images/', 's3');
             // if size less than 150MB
             if ($file->getSize() < 200000000) {
                 if (in_array($file->getClientOriginalExtension(), $allowed)) {
@@ -133,8 +134,6 @@ class MessagesController extends Controller
                     $attachment_title = $file->getClientOriginalName();
                     // upload attachment and store the new name
                     $attachment = Str::uuid() . "." . $file->getClientOriginalExtension();
-                    
-                    $file->store('images/', 's3');
 
                     //$url= return Storage::disk('s3')->reponse('images/' . $files);
                     //Storage::disk('s3')->setVisibility($file, 'public');
@@ -158,7 +157,7 @@ class MessagesController extends Controller
                 'from_id' => Auth::user()->id,
                 'to_id' => $request['id'],
                 'body' => trim(htmlentities($request['message'])),
-                'attachment' => ($attachment) ? basename($file). ',' . $attachment_title : null,
+                'attachment' => ($attachment) ? basename($files). ',' . $attachment_title : null,
             ]);
 
             // fetch message to send it with the response
