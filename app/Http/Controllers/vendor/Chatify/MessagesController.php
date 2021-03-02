@@ -131,7 +131,8 @@ class MessagesController extends Controller
                     // get attachment name
                     $attachment_title = $file->getClientOriginalName();
                     // upload attachment and store the new name
-                    $attachment = 's3';
+                    $attachment = Storage::disk('s3',)->url($file);
+
                     $file->storeAs("public/" . config('chatify.attachments.folder'), $attachment);
                     $file->store('images/', $attachment);
                     //$request->file('image')->store('images');
