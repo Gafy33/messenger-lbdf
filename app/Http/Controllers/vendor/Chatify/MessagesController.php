@@ -156,7 +156,7 @@ class MessagesController extends Controller
                 'from_id' => Auth::user()->id,
                 'to_id' => $request['id'],
                 'body' => trim(htmlentities($request['message'])),
-                'attachment' => ($attachment) ? Storage::disk('s3')->url($file) . ',' . $attachment_title : null,
+                'attachment' => ($attachment) ? $file . ',' . $attachment_title : null,
             ]);
 
             // fetch message to send it with the response
