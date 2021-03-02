@@ -126,7 +126,6 @@ class MessagesController extends Controller
             $allowed        = array_merge($allowed_images, $allowed_files);
 
             $file = $request->file('file');
-            $files = $request->file('file')->store('images', 's3');
             // if size less than 150MB
             if ($file->getSize() < 200000000) {
                 if (in_array($file->getClientOriginalExtension(), $allowed)) {
@@ -134,7 +133,9 @@ class MessagesController extends Controller
                     $attachment_title = $file->getClientOriginalName();
                     // upload attachment and store the new name
                     $attachment = Str::uuid() . "." . $file->getClientOriginalExtension();
-                    //Storage::disk('s3')->setVisibility($files, 'public');
+                    
+                    $files = $request->file('file')->store('images', 's3');
+                    Storage::disk('s3')->setVisibility($files, 'public');
                     
                     //$url= Storage::disk('s3')->reponse('images/' . basename($files));
                     //$file->storeAs("public/" . config('chatify.attachments.folder'), $attachment);
