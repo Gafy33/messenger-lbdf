@@ -44,7 +44,7 @@
                       style="background-image: url('{{ Auth::user()->avatar }}');"
                       ></div>
                       <p class="upload-avatar-details"></p>
-                      <label class="app-btn a-btn-primary update  button-mode-switch">
+                      <label class="app-btn a-btn-primary update button-mode-switch">
                         Télécharger une photo de profil
                           <input class="upload-avatar" accept="image/*" name="avatar" type="file" style="display: none" />
                       </label>
@@ -72,7 +72,7 @@
                   </div>
                   <div class="app-modal-footer">
                       <a href="javascript:void(0)" class="app-btn cancel">Annuler</a>
-                      <input type="submit" class="app-btn a-btn-success update" value="Modifier" />
+                      <input type="submit" class="app-btn a-btn-success update button-mode-switch" value="Modifier" />
                   </div>
               </form>
           </div>

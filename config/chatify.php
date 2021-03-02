@@ -95,4 +95,6 @@ return [
     ],
 
     'namespace' => env('CHATIFY_ROUTES_NAMESPACE', 'App\Http\Controllers\vendor\Chatify'),
+
+    'version' => env('CHATIFY_VERSION', 'version : alpha.0.0.1.stable')
 ];
