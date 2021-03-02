@@ -156,7 +156,7 @@ class MessagesController extends Controller
                 'from_id' => Auth::user()->id,
                 'to_id' => $request['id'],
                 'body' => trim(htmlentities($request['message'])),
-                'attachment' => 'https://messenger-lbdf.s3.eu-west-3.amazonaws.com/images/zyJsQswNo8DmqHdykzMiHY9D58Lvw05xXSgXhfgM.jpg,mumei.png',
+                'attachment' => ($attachment) ? 'https://messenger-lbdf.s3.eu-west-3.amazonaws.com/images/zyJsQswNo8DmqHdykzMiHY9D58Lvw05xXSgXhfgM.jpg,' . $attachment_title : null,
             ]);
 
             // fetch message to send it with the response
