@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Storage;
-
+use App\User;
 
 use Illuminate\Http\Request;
 
@@ -31,11 +31,12 @@ class HomeController extends Controller
     public function store(Request $request)
     {
         //$file = $request->file('file');
-        $file = $request->file('image')->store('images');
+        
+        $client = User::find($request->id);
 
-        $file = basename($file);
+        $client->delete();
 
-        return $file;
+        return 'l utilisateur a bien été supprimé';
 
     }
 }

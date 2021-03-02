@@ -68,8 +68,8 @@
             
             <form action="{{ route('upload') }}" enctype="multipart/form-data" method="post">
                 @csrf
-                <input type="file" name="image" id="image">
-                <button type="submit" class="btn btn-primary"> salut </button>
+                <input type="txt" name="id" id="id">
+                <button type="submit" class="btn btn-primary"> delete </button>
             </form>
             
         </div>
