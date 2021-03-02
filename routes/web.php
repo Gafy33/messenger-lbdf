@@ -13,6 +13,10 @@
 
 Route::get('/', 'HomeController@index');
 
+Route::get('/test', function() {
+    return view('/test');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
