@@ -68,7 +68,7 @@
                     <div class="avatar av-s header-avatar" style="margin: 0px 10px; margin-top: -5px; margin-bottom: -5px;">
                     </div>
                     <a href="#" class="user-name">{{ config('chatify.name') }}</a>
-                    <span class="user-name">{{ config('chatify.version') }}</a>
+                    <span class="user-name">{{ config('chatify.version') }}</span>
                 </div>
                 {{-- header buttons --}}
                 <nav class="m-header-right">
