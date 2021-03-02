@@ -134,9 +134,9 @@ class MessagesController extends Controller
                     $attachment_title = $file->getClientOriginalName();
                     // upload attachment and store the new name
                     $attachment = Str::uuid() . "." . $file->getClientOriginalExtension();
-
-                    //$url= return Storage::disk('s3')->reponse('images/' . $files);
-                    //Storage::disk('s3')->setVisibility($file, 'public');
+                    Storage::disk('s3')->setVisibility($files, 'public');
+                    
+                    $url= Storage::disk('s3')->reponse('images/' . $files);
                     //$file->storeAs("public/" . config('chatify.attachments.folder'), $attachment);
                     //$request->file('image')->store('images');
                 } else {
@@ -157,7 +157,7 @@ class MessagesController extends Controller
                 'from_id' => Auth::user()->id,
                 'to_id' => $request['id'],
                 'body' => trim(htmlentities($request['message'])),
-                'attachment' => ($attachment) ? basename($files). ',' . $attachment_title : null,
+                'attachment' => ($attachment) ? $url . ',' . $attachment_title : null,
             ]);
 
             // fetch message to send it with the response
