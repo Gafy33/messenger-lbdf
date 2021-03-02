@@ -436,15 +436,12 @@ class MessagesController extends Controller
             if ($file->getSize() < 150000000) {
                 if (in_array($file->getClientOriginalExtension(), $allowed_images)) {
                     // delete the older one
-                    if (Auth::user()->avatar != 'https://messenger-lbdf.s3.eu-west-3.amazonaws.com/avatars/avatar.png') {
-                        $path = Storage::disk('s3')->url(Auth::user()->avatar);
-                        if (!empty($path)) {
+                    /*if (Auth::user()->avatar != 'https://messenger-lbdf.s3.eu-west-3.amazonaws.com/avatars/avatar.png') {
                             Storage::disk('s3')->delete(Auth::user()->avatar);
-                        }
-                    }
+                    }*/
                     // upload
 
-                    $files = $request->file('file')->store('avatars', 's3');
+                    $files = $request->file('avatar')->store('avatars', 's3');
                     Storage::disk('s3')->setVisibility($files, 'public');
 
                     $avatar = Storage::disk('s3')->url($files);
