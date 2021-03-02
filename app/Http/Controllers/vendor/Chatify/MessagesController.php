@@ -124,7 +124,7 @@ class MessagesController extends Controller
             $allowed_files  = Chatify::getAllowedFiles();
             $allowed        = array_merge($allowed_images, $allowed_files);
 
-            $file = $request->file('file')->store('images', 's3');
+            $file = $request->file('file');
 
             // if size less than 150MB
             if ($file->getSize() < 150000000) {
@@ -132,9 +132,8 @@ class MessagesController extends Controller
                     // get attachment name
                     $attachment_title = $file->getClientOriginalName();
                     // upload attachment and store the new name
-                    $attachment = Str::uuid() . "." . $file->getClientOriginalExtension();
-                    $file->storeAs("public/" . config('chatify.attachments.folder'), $attachment);
-                    //$request->file('image')->store('images');
+                    $file->store('images', 's3');
+                    $attachment = storage::disk('s3')->url($file);
                 } else {
                     $error_msg = "Extension de fichier non autorisée!";
                 }
