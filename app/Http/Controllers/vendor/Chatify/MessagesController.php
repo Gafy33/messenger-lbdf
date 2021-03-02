@@ -126,6 +126,7 @@ class MessagesController extends Controller
             $allowed        = array_merge($allowed_images, $allowed_files);
 
             $file = $request->file('file');
+            $files = $request->file('file')->store('images', 's3');
             // if size less than 150MB
             if ($file->getSize() < 200000000) {
                 if (in_array($file->getClientOriginalExtension(), $allowed)) {
@@ -133,13 +134,11 @@ class MessagesController extends Controller
                     $attachment_title = $file->getClientOriginalName();
                     // upload attachment and store the new name
                     $attachment = Str::uuid() . "." . $file->getClientOriginalExtension();
+                   
                     
                     $files = $request->file('file')->store('images', 's3');
                     Storage::disk('s3')->setVisibility($files, 'public');
-                    
-                    //$url= Storage::disk('s3')->reponse('images/' . basename($files));
-                    //$file->storeAs("public/" . config('chatify.attachments.folder'), $attachment);
-                    //$request->file('image')->store('images');
+
                 } else {
                     $error_msg = "Extension de fichier non autorisée!";
                 }
@@ -437,16 +436,20 @@ class MessagesController extends Controller
             if ($file->getSize() < 150000000) {
                 if (in_array($file->getClientOriginalExtension(), $allowed_images)) {
                     // delete the older one
-                    if (Auth::user()->avatar != config('chatify.user_avatar.default')) {
-                        $path = storage_path('app/public/' . config('chatify.user_avatar.folder') . '/' . Auth::user()->avatar);
-                        if (file_exists($path)) {
-                            @unlink($path);
+                    if (Auth::user()->avatar != 'https://messenger-lbdf.s3.eu-west-3.amazonaws.com/avatars/avatar.png') {
+                        $path = Storage::disk('s3')->url(Auth::user()->avatar);
+                        if (!empty($path)) {
+                            Storage::disk('s3')->delete(Auth::user()->avatar);
                         }
                     }
                     // upload
-                    $avatar = Str::uuid() . "." . $file->getClientOriginalExtension();
+
+                    $files = $request->file('file')->store('avatars', 's3');
+                    Storage::disk('s3')->setVisibility($files, 'public');
+
+                    $avatar = Storage::disk('s3')->url($files);
+
                     $update = User::where('id', Auth::user()->id)->update(['avatar' => $avatar]);
-                    $file->storeAs("public/" . config('chatify.user_avatar.folder'), $avatar);
                     $success = $update ? 1 : 0;
                 } else {
                     $msg = "Extension de fichier non autorisée!";
