@@ -11,6 +11,7 @@ use Chatify\Facades\ChatifyMessenger as Chatify;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 
 class MessagesController extends Controller
@@ -133,7 +134,6 @@ class MessagesController extends Controller
                     // upload attachment and store the new name
 
                     $attachment = Storage::disk('s3',)->url($file);
-                    $file->storeAs("public/" . config('chatify.attachments.folder'), $attachment);
                     //$request->file('image')->store('images');
                 } else {
                     $error_msg = "Extension de fichier non autorisée!";
