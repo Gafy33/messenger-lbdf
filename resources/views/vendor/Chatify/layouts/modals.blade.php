@@ -46,7 +46,7 @@
                       <p class="upload-avatar-details"></p>
                       <label class="app-btn a-btn-primary update">
                         Télécharger une photo de profil
-                          <input class="upload-avatar" accept="image/*" name="avatar" type="file" style="display: none" />
+                          <input class="upload-avatar button-mode-switch" accept="image/*" name="avatar" type="file" style="display: none" />
                       </label>
                       {{-- Dark/Light Mode  --}}
                       <p class="divider"></p>

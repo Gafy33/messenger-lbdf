@@ -67,6 +67,13 @@
 .dark-mode-switch{
     color: {{ $messengerColor }};
 }
+
+
+.button-mode-switch
+{
+    background: {{ $messengerColor }};
+}
+
 .m-list-active .activeStatus{
     border-color: {{ $messengerColor }} !important;
 }
