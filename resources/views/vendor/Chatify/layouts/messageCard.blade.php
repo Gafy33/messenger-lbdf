@@ -20,7 +20,7 @@
     {{-- If attachment is an image --}}
         @if(@$attachment[2] == 'image')
         <div>
-            <div class="message-card mc-sender" >
+            <div class="message-card" >
                 <div class="image-file" style="width: auto; height: auto;">
                     <img class="chat-image" src="{{ $attachment[0] }}" style="max-width: 500x; max-height: 400px;background-image: url('{{ $attachment[0] }}')">
                 </div>
