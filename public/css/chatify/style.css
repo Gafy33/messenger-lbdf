@@ -51,7 +51,7 @@ body{
   right: 0px;
 	z-index: 1;
 	background: transparent;
-  width: 45%;
+  width: 20%;
   min-width: 200px;
   overflow: auto;
 }
@@ -339,6 +339,7 @@ body{
 }
 .mc-sender{
 	direction: rtl;
+  text-align: right;
 }
 .mc-sender p{
 	direction: ltr;
@@ -430,10 +431,10 @@ body{
 }
 .image-file{
     cursor: pointer;
-	width: 140px;
+	  width: 140px;
     height: 70px;
     border-radius: 4px;
-    background-color: #f7f7f7;
+    background-color: transparent;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

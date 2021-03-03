@@ -71,6 +71,15 @@
                 <input type="txt" name="id" id="id">
                 <button type="submit" class="btn btn-primary"> delete </button>
             </form>
+
+            @if(@$attachment[2] == 'image')
+            <div>
+                <div class="message-card mc-sender">
+                    <div class="image-file chat-image" style="width: 250px; height: 150px;background-image: url('{{ $attachment[0] }}')">
+                    </div>
+                </div>
+            </div>
+            @endif
             
         </div>
     </body>
