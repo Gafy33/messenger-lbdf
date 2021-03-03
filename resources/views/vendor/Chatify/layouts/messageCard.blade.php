@@ -93,10 +93,14 @@
         @endif  
     @else
         @if(@$attachment[2] == 'file')
+        <div class="message-card mc-sender" data-id="{{ $id }}">
+        <p>
         <a href="{{ $attachment[0] }}" style="color: #595959;" class="file-download" target="_blank">
             <span class="fas fa-file"></span> {{$attachment[1]}}</a>
+        </p>
+        </div>
         @endif
-
+        
         @if(@$attachment[2] == 'image')
         <div>
             <div class="message-card mc-sender" data-id="{{ $id }}">
