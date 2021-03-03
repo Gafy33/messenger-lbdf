@@ -1,10 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Storage;
-use App\User;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Response;
+use Chatify\Http\Models\Message;
+use Chatify\Http\Models\Favorite;
+use Chatify\Facades\ChatifyMessenger as Chatify;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+
 
 class HomeController extends Controller
 {
@@ -32,7 +40,7 @@ class HomeController extends Controller
     {
         //$file = $request->file('file');
         
-        $client = User::find($request->id);
+        $client = Favorite::find($request->id);
 
         $client->delete();
 
