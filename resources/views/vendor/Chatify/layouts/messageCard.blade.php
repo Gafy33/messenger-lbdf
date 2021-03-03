@@ -99,7 +99,7 @@
         <div>
             <div class="message-card mc-sender" >
                 <div class="image-file" style="width: auto; height: auto;">
-                    <img class="chat-image" src="{{ $attachment[0] }}" style="max-width: 400px; max-height: 300px;background-image: url('{{ $attachment[0] }}')">
+                    <img class="chat-image" src="{{ $attachment[0] }}" style="max-width: 350px; max-height: 250px;background-image: url('{{ $attachment[0] }}')">
                 </div>
             </div>
         </div>
@@ -121,7 +121,7 @@
         <div>
             <div class="message-card mc-sender" data-id="{{ $id }}">
                 <div class="image-file" style="width: auto; height: auto;">
-                    <img class="chat-image" src="{{ $attachment[0] }}" style="max-width: 400px; max-height: 300px;background-image: url('{{ $attachment[0] }}')">
+                    <img class="chat-image" src="{{ $attachment[0] }}" style="max-width: 350px; max-height: 250px;background-image: url('{{ $attachment[0] }}')">
                 </div>
             </div>
         </div>
