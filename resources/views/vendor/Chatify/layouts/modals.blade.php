@@ -78,3 +78,32 @@
           </div>
       </div>
   </div>
+{{-- ---------------------- Settings Modal ---------------------- --}}
+  <div class="app-modal" data-name="patch">
+    <div class="app-modal-container">
+        <div class="app-modal-card" data-name="patch" data-modal='0'>
+                <div class="app-modal-header">
+                 Patch Notes </div>
+                <div class="app-modal-body">
+                    <hr>
+                    <p class="app-modal-header">Version : <span style="color: green " > {{ config('chatify.version') }} </span></p>
+                    <hr>
+                    <div class="update-messengerColor">
+                          <p> <span style="color: green " ><i class="fas fa-wrench"></i></span>  Modification taille des images affiché à l'écran </p>
+                          <p> <span style="color: green " ><i class="fas fa-wrench"></i></span>  Ajout du Patch Note </p>
+                          <p> <span style="color: green " ><i class="fas fa-wrench"></i></span>  Le noms des images n'apparait plus </p>
+                          <p> <span style="color: green " ><i class="fas fa-wrench"></i></span>  Visualisation des fichiers ( <span style="color: red"> <i class="fas fa-exclamation-triangle"></i> On ne peut pas encore les télécharger </span> ) </p>
+                          <p> <span style="color: green " ><i class="fas fa-wrench"></i></span>  Modification des messages ( ajustement, affichage de l'heure en dessous du message ) </p>
+                          <p> <span style="color: green " ><i class="fas fa-wrench"></i></span>  Ajout des liens interactives ( https et http ) </p>
+                    </div>
+                    <hr>
+                    <div class="update-messengerColor">
+                        <p> Date Patch Note : 03/03/2021 à 23h38 </p>
+                  </div>
+                </div>
+                <div class="app-modal-footer">
+                    <a href="javascript:void(0)" class="app-btn cancel">Fermer</a>
+                </div>
+        </div>
+    </div>
+</div>    

@@ -41,7 +41,6 @@
         <p>
         <a href="{{ $attachment[0] }}" style="color: #595959;" class="file-download" target="_blank">
             <span class="fas fa-file"></span> {{$attachment[1]}}</a>
-            <br>
                     <sub title="{{ $fullTime }}" class="message-time">
                     <span class="fas fa-{{ $seen > 0 ? 'check-double' : 'check' }} seen"></span> {{ $time }}
                     </sub>
@@ -111,7 +110,6 @@
         <p>
         <a href="{{ $attachment[0] }}" style="color: #595959;" class="file-download" target="_blank">
             <span class="fas fa-file"></span> {{$attachment[1]}}</a>
-            <br>
                     <sub title="{{ $fullTime }}" class="message-time">
                     <span class="fas fa-{{ $seen > 0 ? 'check-double' : 'check' }} seen"></span> {{ $time }}
                     </sub>

@@ -997,6 +997,7 @@ $(document).ready(function () {
     // click action for [add to favorite] button.
     $('.add-to-favorite').on('click', function () {
         star(messenger.split('_')[1]);
+        getFavoritesList();
     });
 
     // calling Css Media Queries
@@ -1123,11 +1124,18 @@ $(document).ready(function () {
         });
     });
 
+    $('.patch-btn').on('click', function () {
+        app_modal({
+            name: 'patch',
+        });
+    });
+
     // on submit settings' form
     $('#updateAvatar').on('submit', (e) => {
         e.preventDefault();
         updateSettings();
     });
+
     // Settings modal [cancel button]
     $('.app-modal[data-name=settings]').find('.app-modal-footer .cancel').on('click', function () {
         app_modal({
@@ -1135,6 +1143,13 @@ $(document).ready(function () {
             name: 'settings',
         });
         cancelUpdatingAvatar();
+    });
+
+    $('.app-modal[data-name=patch]').find('.app-modal-footer .cancel').on('click', function () {
+        app_modal({
+            show: false,
+            name: 'patch',
+        });
     });
     // upload avatar on change
     $('body').on('change', ".upload-avatar", (e) => {
