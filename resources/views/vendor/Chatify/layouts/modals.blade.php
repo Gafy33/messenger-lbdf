@@ -95,10 +95,11 @@
                           <p> <span style="color: green " ><i class="fas fa-wrench"></i></span>  Visualisation des fichiers ( <span style="color: red"> <i class="fas fa-exclamation-triangle"></i> On ne peut pas encore les télécharger </span> ) </p>
                           <p> <span style="color: green " ><i class="fas fa-wrench"></i></span>  Modification des messages ( ajustement, affichage de l'heure en dessous du message ) </p>
                           <p> <span style="color: green " ><i class="fas fa-wrench"></i></span>  Ajout des liens interactives ( https et http ) </p>
+                          <p> <span style="color: green " ><i class="fas fa-wrench"></i></span>  Réglage et réparation du bug touchant le bouton <b><i class="fas fa-cog"></i></b> </p>
                     </div>
                     <hr>
                     <div class="update-messengerColor">
-                        <p> Date Patch Note : 03/03/2021 à 23h38 </p>
+                        <p> Date Patch Note : 04/03/2021 à 01:08 </p>
                   </div>
                 </div>
                 <div class="app-modal-footer">
