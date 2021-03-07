@@ -49620,11 +49620,3 @@ module.exports = __webpack_require__(/*! C:\Users\arman\Desktop\chatify-demo-mas
 /***/ })
 
 /******/ });
-
-$(document).ready(function(e) {
-  $('#input-default').emojiPicker();
-
-  $(".emojiable-option").on("keyup", function () {
-  //console.log("emoji added, input val() is: " + $(this).val());
-  });
-});
