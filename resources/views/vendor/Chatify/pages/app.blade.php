@@ -5,12 +5,19 @@
         {{-- Header and search bar --}}
         <div class="m-header">
             <nav>
-                <a href="#"><i class="fas fa-inbox"></i> <span class="messenger-headTitle">MESSAGES</span> </a>
+                <a href="#"><i class="fas fa-inbox"></i> <span class="messenger-headTitle"> {{ Auth::user()->name }}</span> </a>
                 {{-- header buttons --}}
                 <nav class="m-header-right">
                     <a href="#" class="patch-btn"><i class="fas fa-clipboard"></i></a>
                     <a href="{{ route('home') }}"><i class="fas fa-home"></i></a>
                     <a href="#" class="settings-btn"><i class="fas fa-cog"></i></a>
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();">
+                    <i class="fas fa-sign-out-alt"></i> </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                       </form>
                     <a href="#" class="listView-x"><i class="fas fa-times"></i></a>
                 </nav>
             </nav>

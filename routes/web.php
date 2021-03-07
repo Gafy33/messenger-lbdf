@@ -21,4 +21,4 @@ Route::post('/test',  'HomeController@store')->name('upload');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/app', 'vendor\chatify\MessagesController@index')->name('home');
