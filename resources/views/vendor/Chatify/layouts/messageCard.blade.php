@@ -38,7 +38,7 @@
         <div>
             <div class="message-card" >
                 <div class="image-file" style="width: auto; height: auto;">
-                    <img class="chat-image" src="{{ $attachment[0] }}" style="max-width: 400px; max-height: 300px;background-image: url('{{ $attachment[0] }}')">
+                    <img class="chat-image" src="{{ $attachment[0] }}" style="max-width: 400px; max-height: 300px;border-radius: 5px;background-image: url('{{ $attachment[0] }}')">
                 </div>
             </div>
         </div>
@@ -52,14 +52,14 @@
                 <span> user </span>
             </div>
             <div class="message-card" > 
-        <p>
-        <a href="{{ $attachment[0] }}" style="color: #595959;" class="file-download" target="_blank">
-            <span class="fas fa-file"></span> {{$attachment[1]}}</a>
-                    <sub title="{{ $fullTime }}" class="message-time">
-                    <span class="fas fa-{{ $seen > 0 ? 'check-double' : 'check' }} seen"></span> {{ $time }}
-                    </sub>
-        </p>
-        </div>
+                <p>
+                <a href="{{ $attachment[0] }}" style="color: #595959;" class="file-download" target="_blank">
+                    <span class="fas fa-file"></span> {{$attachment[1]}}</a>
+                            <sub title="{{ $fullTime }}" class="message-time">
+                            <span class="fas fa-{{ $seen > 0 ? 'check-double' : 'check' }} seen"></span> {{ $time }}
+                            </sub>
+                </p>
+            </div>
         </div>
         @endif
         
@@ -73,7 +73,7 @@
                 </div>
                 <div class="message-card" > 
                 <div class="image-file" style="width: auto; height: auto;">
-                    <img class="chat-image" src="{{ $attachment[0] }}" style="max-width: 400px; max-height: 300px;background-image: url('{{ $attachment[0] }}')">
+                    <img class="chat-image" src="{{ $attachment[0] }}" style="max-width: 400px; max-height: 300px;border-radius: 5px;background-image: url('{{ $attachment[0] }}')">
                 </div>
                 </div>
             </div>
@@ -125,10 +125,10 @@
             </div>
         </div>
         @if(@$attachment[2] == 'image')
-        <div>
-            <div class="message-card mc-sender" >
+        <div class="mc-sender">
+            <div class="message-card" >
                 <div class="image-file" style="width: auto; height: auto;">
-                    <img class="chat-image" src="{{ $attachment[0] }}" style="max-width: 350px; max-height: 250px;background-image: url('{{ $attachment[0] }}')">
+                    <img class="chat-image" src="{{ $attachment[0] }}" style="max-width: 350px; max-height: 250px;border-radius: 5px;background-image: url('{{ $attachment[0] }}')">
                 </div>
             </div>
         </div>
@@ -143,13 +143,13 @@
                 <span> user </span>
             </div>
             <div class="message-card" >  
-        <p>
-        <a href="{{ $attachment[0] }}" style="color: #595959;" class="file-download" target="_blank">
-            <span class="fas fa-file"></span> {{$attachment[1]}}</a>
-                    <sub title="{{ $fullTime }}" class="message-time">
-                    <span class="fas fa-{{ $seen > 0 ? 'check-double' : 'check' }} seen"></span> {{ $time }}
-                    </sub>
-        </p>
+                <p>
+                <a href="{{ $attachment[0] }}" style="color: #595959;" class="file-download" target="_blank">
+                    <span class="fas fa-file"></span> {{$attachment[1]}}</a>
+                            <sub title="{{ $fullTime }}" class="message-time">
+                            <span class="fas fa-{{ $seen > 0 ? 'check-double' : 'check' }} seen"></span> {{ $time }}
+                            </sub>
+                </p>
             </div>
         </div>
         @endif
@@ -164,17 +164,19 @@
                 </div>
                 <div class="message-card" >
                 <div class="image-file" style="width: auto; height: auto;">
-                    <img class="chat-image" src="{{ $attachment[0] }}" style="max-width: 350px; max-height: 250px;background-image: url('{{ $attachment[0] }}')">
+                    <img class="chat-image" src="{{ $attachment[0] }}" style="max-width: 350px; max-height: 250px;border-radius: 5px;background-image: url('{{ $attachment[0] }}')">
                 </div>
                 </div>
             </div>
         </div>
-            <div class="message-card mc-sender" data-id="{{ $id }}">
-                <p>
-                    <sub title="{{ $fullTime }}" class="message-time">
-                    <span class="fas fa-{{ $seen > 0 ? 'check-double' : 'check' }} seen"></span> {{ $time }}
-                    </sub>
-                </p>
+            <div class="mc-sender" data-id="{{ $id }}">
+                <div class="message-card ">
+                    <p>
+                        <sub title="{{ $fullTime }}" class="message-time">
+                        <span class="fas fa-{{ $seen > 0 ? 'check-double' : 'check' }} seen"></span> {{ $time }}
+                        </sub>
+                    </p>
+                </div>
             </div>
         @endif
     @endif

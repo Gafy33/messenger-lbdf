@@ -86,8 +86,7 @@
                  Patch Notes </div>
                 <div class="app-modal-body">
                     <hr>
-                    <p class="app-modal-header">Version : <span style="color: green " > {{ config('chatify.version') }} </span></p>
-                    <hr>
+                    <p class="app-modal-header"> <b>Version : <span style="color: green " > {{ config('chatify.version') }} </span> </b></p>
                     <div class="update-messengerColor">
                           <p> <span style="color: green " ><i class="fas fa-wrench"></i></span>  Ajout des pp a coter des messages ( affiche l'image par défault du site) </p>
                           <p> <span style="color: green " ><i class="fas fa-wrench"></i></span>  Ajout des username au dessus des messages ( affiche user par défault ) </p>
@@ -95,8 +94,13 @@
                           <p> <span style="color: green " ><i class="fas fa-wrench"></i></span>  Ajout de la page "Télécharger" pour pouvoir télécharger les applicattions sur la page login register </p>
                     </div>
                     <hr>
+                    <p class="app-modal-header"> <b>Fixe Bug </b></p>
                     <div class="update-messengerColor">
-                        <p> Date Patch Note : 07/03/2021 à 21:04 </p>
+                        <p> <span style="color: green " ><i class="fas fa-wrench"></i></span>  Le bug touchant le disfonctionnement de tous les script js a été réglé </p>
+                    </div>
+                    <hr>
+                    <div class="update-messengerColor">
+                        <p> Date Patch Note : 08/03/2021 à 19:11 </p>
                   </div>
                 </div>
                 <div class="app-modal-footer">
