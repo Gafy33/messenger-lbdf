@@ -92,8 +92,10 @@ function avatarLoading(items) {
 // While sending a message, show this temporary message card.
 function sendigCard(message, id) {
  return `
- <div class="message-card mc-sender" data-id="`+ id + `">
+ <div class="mc-sender">
+ <div class="message-card" data-id="`+ id + `">
      <p>`+ message + `<sub><span class="far fa-clock"></span></sub></p>
+ </div>
  </div>
  `;
 }
@@ -426,6 +428,8 @@ function fetchMessages(id, type) {
 
              // trigger seen event
              makeSeen(true);
+
+             messageInput.focus();
              
          },
          error: () => {
@@ -1038,10 +1042,12 @@ $(document).ready(function () {
              // if the file not image
              sendCard.find('.attachment-preview').remove(); // older one
              sendCard.prepend(attachmentTemplate('file', file.name));
+             messageInput.focus();
          } else {
              // if the file is an image
              sendCard.find('.attachment-preview').remove(); // older one
              sendCard.prepend(attachmentTemplate('image', file.name, e.target.result));
+             messageInput.focus();
          }
      });
  });

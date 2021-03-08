@@ -9,7 +9,6 @@
                 {{-- header buttons --}}
                 <nav class="m-header-right">
                     <a href="#" class="patch-btn"><i class="fas fa-clipboard"></i></a>
-                    <a href="{{ route('home') }}"><i class="fas fa-home"></i></a>
                     <a href="#" class="settings-btn"><i class="fas fa-cog"></i></a>
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
