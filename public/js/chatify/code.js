@@ -423,10 +423,10 @@ function fetchMessages(id, type) {
              // remove loading bar
              NProgress.done();
              NProgress.remove();
-             messageInput.focus();
 
              // trigger seen event
              makeSeen(true);
+             lesbeaufsdefrance33@gmail.com
          },
          error: () => {
              // remove loading bar

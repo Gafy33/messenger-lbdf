@@ -281,7 +281,7 @@ body{
     font-size: 14px;
     transition: background .3s;
 }
-.messenger-infoView-btns a.default:hover{
+.messenger-infoView-btns a.default:hover,{
 	background: #f0f6ff;
 }
 .messenger-infoView-btns a.danger{
