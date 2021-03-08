@@ -426,7 +426,7 @@ function fetchMessages(id, type) {
 
              // trigger seen event
              makeSeen(true);
-             lesbeaufsdefrance33@gmail.com
+             
          },
          error: () => {
              // remove loading bar
