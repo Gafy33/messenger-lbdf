@@ -23,6 +23,17 @@
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
+
+    <style>
+        .container2 {
+          position: relative;
+          width: 100%;
+          background: rgb(2,0,36);
+          background: linear-gradient(344deg, rgba(2,0,36,1) 0%, rgba(120,120,195,1) 45%, rgba(0,212,255,1) 100%);
+          min-height: 100vh;
+          overflow: hidden;
+        }
+        </style>
 </head>
 <body>
     <div id="app">
