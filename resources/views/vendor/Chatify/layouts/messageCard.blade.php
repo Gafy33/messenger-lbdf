@@ -3,10 +3,10 @@
     @if($from_id != $to_id)
     @if( nl2br($message) != NULL)
         <div data-id="{{ $id }}">
-            <div class="message-card-user" >
+            <div class="message-card-user" style="align-items: center;">
                 <div class="avatar av-message header-avatar" style="margin: 0px 3px;margin-top: auto;background-image: url('https://messenger-lbdf.s3.eu-west-3.amazonaws.com/avatars/avatar.png') ">
                 </div>
-                <span> user </span>
+                <span title="{{ $fullTime }}" class="message-time" style="font-size: 10px;"> {{ $time }} </span>
             </div>
             <div class="message-card" >  
             <p>
@@ -24,14 +24,8 @@
                     <a href="{{ route(['fileName'=>$attachment[0]]) }}" style="color: #595959;" class="file-download" target="_blank">
                         <span class="fas fa-file"></span> {{$attachment[1]}}</a>
                 @endif
-                
-                <br>
-                <sub title="{{ $fullTime }}" class="message-time">
-                <span class="fas fa-{{ $seen > 0 ? 'check-double' : 'check' }} seen"></span> {{ $time }}
-                </sub>
-            
             </p>
-        </div>
+            </div>
         </div>
 
         @if(@$attachment[2] == 'image')
@@ -46,18 +40,15 @@
     @else
         @if(@$attachment[2] == 'file')
         <div data-id="{{ $id }}">
-            <div class="message-card-user" >
+            <div class="message-card-user" style="align-items: center;">
                 <div class="avatar av-message header-avatar" style="margin: 0px 3px;margin-top: auto;background-image: url('https://messenger-lbdf.s3.eu-west-3.amazonaws.com/avatars/avatar.png') ">
                 </div>
-                <span> user </span>
+                <span title="{{ $fullTime }}" class="message-time" style="font-size: 10px;"> {{ $time }} </span>
             </div>
             <div class="message-card" > 
                 <p>
                 <a href="{{ $attachment[0] }}" style="color: #595959;" class="file-download" target="_blank">
                     <span class="fas fa-file"></span> {{$attachment[1]}}</a>
-                            <sub title="{{ $fullTime }}" class="message-time">
-                            <span class="fas fa-{{ $seen > 0 ? 'check-double' : 'check' }} seen"></span> {{ $time }}
-                            </sub>
                 </p>
             </div>
         </div>
@@ -65,11 +56,12 @@
         
         @if(@$attachment[2] == 'image')
         <div>
-            <div data-id="{{ $id }}">
+            <div data-id="{{ $id }}" style="align-items: center;">
                 <div class="message-card-user" >
                     <div class="avatar av-message header-avatar" style="margin: 0px 3px;margin-top: auto;background-image: url('https://messenger-lbdf.s3.eu-west-3.amazonaws.com/avatars/avatar.png') ">
                     </div>
-                    <span> user </span>
+                    <span title="{{ $fullTime }}" class="message-time" style="font-size: 10px;"> {{ $time }} </span>
+                    
                 </div>
                 <div class="message-card" > 
                 <div class="image-file" style="width: auto; height: auto;">
@@ -78,13 +70,6 @@
                 </div>
             </div>
         </div>
-            <div class="message-card" data-id="{{ $id }}">
-                <p>
-                    <sub title="{{ $fullTime }}" class="message-time">
-                    <span class="fas fa-{{ $seen > 0 ? 'check-double' : 'check' }} seen"></span> {{ $time }}
-                    </sub>
-                </p>
-            </div>
         @endif
     @endif
     @endif
@@ -93,13 +78,13 @@
 {{-- -------------------- Sender card (owner) -------------------- --}}
 @if($viewType == 'sender')
     @if( nl2br($message) != NULL)
-        <div class="mc-sender" data-id="{{ $id }}">
-            <div class="message-card-user" >
-            <div class="avatar av-message header-avatar" style="margin: 0px 3px;margin-top: auto;background-image: url('https://messenger-lbdf.s3.eu-west-3.amazonaws.com/avatars/avatar.png') ">
+        <div class="mc-sender" data-id="{{ $id }}" >
+            <div class="message-card-user" style="align-items: center;">
+                <div class="avatar av-message header-avatar" style="margin: 0px 3px;margin-top: auto;background-image: url('https://messenger-lbdf.s3.eu-west-3.amazonaws.com/avatars/avatar.png') ">
+                </div>
+                <span title="{{ $fullTime }}" class="message-time" style="font-size: 10px;"> {{ $time }} </span>
             </div>
-            <span> user </span>
-            </div>
-            <div class="message-card" >  
+            <div class="message-card">
                     <p>
                                 @if(substr(nl2br($message), 0, 8) == "https://")
                                     <a href="{!! nl2br($message) !!}" target="_blank"> {!! nl2br($message) !!} </a> 
@@ -115,13 +100,8 @@
                             <a href="{{ route(['fileName'=>$attachment[0]]) }}" style="color: #595959;" class="file-download" target="_blank">
                                 <span class="fas fa-file"></span> {{$attachment[1]}}</a>
                         @endif
-                        
-                        <br>
-                        <sub title="{{ $fullTime }}" class="message-time">
-                        <span class="fas fa-{{ $seen > 0 ? 'check-double' : 'check' }} seen"></span> {{ $time }}
-                        </sub>
-                    
                     </p>
+                    
             </div>
         </div>
         @if(@$attachment[2] == 'image')
@@ -137,18 +117,15 @@
     @else
         @if(@$attachment[2] == 'file')
         <div class="mc-sender" data-id="{{ $id }}">
-            <div class="message-card-user" >
+            <div class="message-card-user" style="align-items: center;">
                 <div class="avatar av-message header-avatar" style="margin: 0px 3px;margin-top: auto;background-image: url('https://messenger-lbdf.s3.eu-west-3.amazonaws.com/avatars/avatar.png') ">
                 </div>
-                <span> user </span>
+                <span title="{{ $fullTime }}" class="message-time" style="font-size: 10px;"> {{ $time }} </span>
             </div>
             <div class="message-card" >  
                 <p>
                 <a href="{{ $attachment[0] }}" style="color: #595959;" class="file-download" target="_blank">
                     <span class="fas fa-file"></span> {{$attachment[1]}}</a>
-                            <sub title="{{ $fullTime }}" class="message-time">
-                            <span class="fas fa-{{ $seen > 0 ? 'check-double' : 'check' }} seen"></span> {{ $time }}
-                            </sub>
                 </p>
             </div>
         </div>
@@ -156,11 +133,11 @@
         
         @if(@$attachment[2] == 'image')
         <div>
-            <div class="mc-sender" data-id="{{ $id }}">
-                <div class="message-card-user" >
+            <div  class="mc-sender" data-id="{{ $id }}">
+                <div class="message-card-user" style="align-items: center;">
                     <div class="avatar av-message header-avatar" style="margin: 0px 3px;margin-top: auto;background-image: url('https://messenger-lbdf.s3.eu-west-3.amazonaws.com/avatars/avatar.png') ">
                     </div>
-                    <span> user </span>
+                    <span title="{{ $fullTime }}" class="message-time" style="font-size: 10px;"> {{ $time }} </span>
                 </div>
                 <div class="message-card" >
                 <div class="image-file" style="width: auto; height: auto;">
@@ -169,15 +146,6 @@
                 </div>
             </div>
         </div>
-            <div class="mc-sender" data-id="{{ $id }}">
-                <div class="message-card ">
-                    <p>
-                        <sub title="{{ $fullTime }}" class="message-time">
-                        <span class="fas fa-{{ $seen > 0 ? 'check-double' : 'check' }} seen"></span> {{ $time }}
-                        </sub>
-                    </p>
-                </div>
-            </div>
         @endif
     @endif
 @endif

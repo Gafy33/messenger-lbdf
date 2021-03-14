@@ -17,10 +17,6 @@ Route::get('/test', function() {
     return view('/test');
 });
 
-Route::get('/sondage', function() {
-    return view('/sondage');
-})->name('sondage');
-
 Route::post('/test',  'HomeController@store')->name('upload');
 
 Auth::routes();

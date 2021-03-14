@@ -5,11 +5,10 @@
         {{-- Header and search bar --}}
         <div class="m-header">
             <nav>
-                <a href="#"><i class="fas fa-inbox"></i> <span class="messenger-headTitle"> {{ Auth::user()->name }}</span> </a>
+                <span class="messenger-headTitle" style="color: white"> {{ Auth::user()->name }}</span>
                 {{-- header buttons --}}
                 <nav class="m-header-right">
-                    <a href="{{ route('sondage')}}"><i class="fas fa-poll"></i></i></a>
-                    <a href="#" class="patch-btn"><i class="fas fa-clipboard"></i></a>
+                    <!--<a href="#" class="patch-btn"><i class="fas fa-clipboard"></i></a>-->
                     <a href="#" class="settings-btn"><i class="fas fa-cog"></i></a>
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();

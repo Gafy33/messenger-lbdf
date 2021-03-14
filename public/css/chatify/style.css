@@ -355,7 +355,7 @@ body{
 }
 
 .message-card p sub{
-	display: inline-block;
+	  display: inline-block;
     font-size: 11px;
 }
 .message-card p sub:before {
@@ -370,8 +370,10 @@ body{
 	direction: rtl;
   text-align: right;
 }
+
 .mc-sender p{
-	direction: ltr;
+  text-align: left;
+  direction: ltr;
   color: #fff !important;
 }
 .mc-sender p sub{
