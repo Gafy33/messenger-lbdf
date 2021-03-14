@@ -71,7 +71,6 @@
                 <input type="txt" name="id" id="id">
                 <button type="submit" class="btn btn-primary"> delete </button>
             </form>
-
             
         </div>
     </body>

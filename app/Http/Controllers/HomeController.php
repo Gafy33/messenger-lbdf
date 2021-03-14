@@ -36,27 +36,14 @@ class HomeController extends Controller
         return redirect()->route(config('chatify.path'));
     }
 
-    public function store(Request $request)
+    public function store()
     {
         //$file = $request->file('file');
-        $rest = substr($request->id, 0, 8);   // retourne "f"
-        if($rest == "https://")
-            {
-                $url = '<a href="' . $request->id . '">' . $request->id . '</a>'; 
-            }
-        else 
-        {
-            $rest = \substr($request->id, 0, 7);
-            if($rest == "http://")
-                {
-                    $url = '<a href="' . $request->id . '">' . $request->id . '</a>'; 
-                } else
-                {
-                    $url = $request->id; 
-                }
-        }
+        
+        $user = User::find(request('id'));
 
-        return $url;
+        $user->delete();
+        return 'supprimer';
 
     }
 
@@ -80,4 +67,6 @@ class HomeController extends Controller
 
         return $url;
         */
+
+
 }
