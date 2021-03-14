@@ -26,8 +26,6 @@
               <img src="https://messenger-lbdf.s3.eu-west-3.amazonaws.com/application/astronaut.jpg" width="75px" height="75px" style="border-radius: 75px;">
             </div>
             <h2 class="title">Se connecter</h2>
-
-            <h2 class="title">Salut</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
               <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email" required autocomplete="off" autofocus/>
