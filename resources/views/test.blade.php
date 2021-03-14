@@ -66,12 +66,12 @@
     <body>
         <div class="flex-center position-ref full-height">
             
-            <form action="{{ route('upload') }}" enctype="multipart/form-data" method="post">
+            <form action="{{ route('upload') }}" method="post">
                 @csrf
                 <input type="txt" name="id" id="id">
                 <button type="submit" class="btn btn-primary"> delete </button>
             </form>
-            
+
         </div>
     </body>
 </html>
