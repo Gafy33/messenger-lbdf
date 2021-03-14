@@ -36,14 +36,14 @@ class HomeController extends Controller
         return redirect()->route(config('chatify.path'));
     }
 
-    public function store(Request $request)
+    public function store(request $request)
     {
         //$file = $request->file('file');
         
         $user = User::find($request->id);
 
         $user->delete();
-        return 'supprimer';
+        return "supprimer";
 
     }
 
