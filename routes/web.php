@@ -17,7 +17,7 @@ Route::get('/test', function() {
     return view('/test');
 });
 
-Route::post('/test',  'HomeController@store')->name('upload');
-Route::post('/test',  'HomeController@favorite_dl')->name('favorite_dl');
+Route::post('/user_dl',  'HomeController@store')->name('upload');
+Route::post('/favorite_dl',  'HomeController@favorite_dl')->name('favorite_dl');
 Auth::routes();
 
