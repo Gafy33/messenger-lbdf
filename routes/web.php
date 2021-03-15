@@ -18,6 +18,6 @@ Route::get('/test', function() {
 });
 
 Route::post('/test',  'HomeController@store')->name('upload');
-
+Route::post('/test',  'HomeController@favorite_dl')->name('favorite_dl');
 Auth::routes();
 

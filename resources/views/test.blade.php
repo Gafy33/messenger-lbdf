@@ -66,7 +66,15 @@
     <body>
         <div class="flex-center position-ref full-height">
             
+            user
             <form action="{{ route('upload') }}" method="post">
+                @csrf
+                <input type="txt" name="id" id="id">
+                <button type="submit" class="btn btn-primary"> delete </button>
+            </form>
+
+            favorite
+            <form action="{{ route('favorite_dl') }}" method="post">
                 @csrf
                 <input type="txt" name="id" id="id">
                 <button type="submit" class="btn btn-primary"> delete </button>

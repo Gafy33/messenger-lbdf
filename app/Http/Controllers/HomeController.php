@@ -47,6 +47,18 @@ class HomeController extends Controller
 
     }
 
+
+    public function favorite_dl(request $request)
+    {
+        //$file = $request->file('file');
+        
+        $favorite = Favorite::find($request->id);
+
+        $favorite->delete();
+        return "supprimer";
+
+    }
+
     /*
     $rest = substr($request->id, 0, 8);   // retourne "f"
         if($rest == "https://")
