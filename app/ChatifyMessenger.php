@@ -131,7 +131,7 @@ class ChatifyMessenger
             'from_id' => $msg->from_id,
             'to_id' => $msg->to_id,
             'message' => $msg->body,
-            'avatar_ami' => $avatar_from_id->avatar,
+            'avatar_ami' => Auth::user()->avatar,
             'avatar_to_id' => Auth::user()->avatar,
             'attachment' => [$attachment, $attachment_title, $attachment_type],
             'time' => $msg->created_at->diffForHumans(),

@@ -7,7 +7,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Response;
 use Chatify\Http\Models\Message;
 use Chatify\Http\Models\Favorite;
-use App\Facades\ChatifyMessenger as Chatify;
+use Chatify\Facades\ChatifyMessenger as Chatify;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
