@@ -54,8 +54,8 @@
         "warmup": [
             "@php artisan view:cache",
             "@php artisan config:cache",
-            "php artisan route:clear",
-            "php artisan cache:clear"
+            "@php artisan route:clear",
+            "@php artisan cache:clear"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
