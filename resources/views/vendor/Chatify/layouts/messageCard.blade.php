@@ -4,7 +4,7 @@
     @if( nl2br($message) != NULL)
         <div data-id="{{ $id }}">
             <div class="message-card-user" style="align-items: center;">
-                <div class="avatar av-message header-avatar" style="margin: 0px 3px;margin-top: auto;background-image: url('https://messenger-lbdf.s3.eu-west-3.amazonaws.com/avatars/avatar.png') ">
+                <div class="avatar av-message header-avatar" style="margin: 0px 3px;margin-top: auto;background-image: url('{{ $avatar_from_id }}') ">
                 </div>
                 <span title="{{ $fullTime }}" class="message-time" style="font-size: 10px;"> {{ $time }} </span>
             </div>
