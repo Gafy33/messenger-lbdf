@@ -19,5 +19,13 @@ Route::get('/test', function() {
 
 Route::post('/user_dl',  'HomeController@store')->name('upload');
 Route::post('/favorite_dl',  'HomeController@favorite_dl')->name('favorite_dl');
+
+Route::get('/clear', function() {
+    Artisan::call('cache:clear');
+    Artisan::call('route:clear');
+    Artisan::call('config:clear');
+    Artisan::call('view:clear');
+    return "Cache is cleared";
+});
 Auth::routes();
 
