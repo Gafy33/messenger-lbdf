@@ -4,7 +4,7 @@
     @if( nl2br($message) != NULL)
         <div data-id="{{ $id }}">
             <div class="message-card-user" style="align-items: center;">
-                <div class="avatar av-message header-avatar" style="margin: 0px 3px;margin-top: auto;background-image: url('{{ Auth::user()->avatar }}') ">
+                <div class="avatar av-message header-avatar" style="margin: 0px 3px;margin-top: auto;background-image: url('{{ $avatar_ami }}') ">
                 </div>
                 <span title="{{ $fullTime }}" class="message-time" style="font-size: 10px;"> {{ $time }} </span>
             </div>
@@ -41,7 +41,7 @@
         @if(@$attachment[2] == 'file')
         <div data-id="{{ $id }}">
             <div class="message-card-user" style="align-items: center;">
-                <div class="avatar av-message header-avatar" style="margin: 0px 3px;margin-top: auto;background-image: url('{{ Auth::user()->avatar }}') ">
+                <div class="avatar av-message header-avatar" style="margin: 0px 3px;margin-top: auto;background-image: url('{{ $avatar_to_id }}') ">
                 </div>
                 <span title="{{ $fullTime }}" class="message-time" style="font-size: 10px;"> {{ $time }} </span>
             </div>
