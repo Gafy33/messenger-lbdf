@@ -128,7 +128,7 @@ class MessagesController extends Controller
             $file = $request->file('file');
             $files = $request->file('file')->store('images', 's3');
             // if size less than 150MB
-            if ($file->getSize() < 300000000) {
+            if ($file->getSize() < 200000000) {
                 if (in_array($file->getClientOriginalExtension(), $allowed)) {
                     // get attachment name
                     $attachment_title = $file->getClientOriginalName();
